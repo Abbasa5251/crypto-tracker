@@ -28,8 +28,8 @@ const App = () => {
 	};
 
 	const handleDarkMode = () => {
-		const body = document.getElementById("body");
-		isDarkMode ? body.classList.add("dark") : body.classList.remove("dark");
+		const body = document.querySelector("#body");
+		isDarkMode ? body.classList.remove("dark") : body.classList.add("dark");
 		setIsDarkMode(!isDarkMode);
 	};
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
+import axiosInstance from "./request";
 import { BeatLoader } from "react-spinners";
 import Coin from "./components/Coin";
 
@@ -10,9 +11,9 @@ const App = () => {
 	const [search, setSearch] = useState("");
 
 	useEffect(() => {
-		axios
+		axiosInstance
 			.get(
-				"https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false"
+				"/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false"
 			)
 			.then((res) => {
 				setCoins(res.data);
